@@ -1,284 +1,122 @@
-## **For Loops in Python**
+## **Python Basics - 1**
 
-In Python, a **`for` loop** is used to iterate over a sequence (like a list, tuple, string, or range) and execute a block of code repeatedly for each element in the sequence.
+### **1. Variables in Python**
+Variables in Python are used to store data values. They are created when you assign a value to them, and you don’t need to declare their type (Python is dynamically typed).
 
-### **1. The Basic Structure of a `for` Loop**
-
-A **`for` loop** allows you to repeat a block of code a fixed number of times, or once for each element in a sequence.
-
-#### **Syntax**:
+#### **Syntax for Variable Assignment:**
 ```python
-for item in sequence:
-    # Code to execute for each item in the sequence
+x = 5  # Assigning an integer value to the variable x
+y = "Hello"  # Assigning a string value to the variable y
 ```
 
-#### **Example**:
-Let’s print each name in a list of Kannada cities:
+#### **Variable Naming Rules:**
+- Variable names can contain letters (a-z, A-Z), numbers (0-9), and underscores (_).
+- Variable names must start with a letter or an underscore.
+- Variable names are case-sensitive (`Name` and `name` are different).
 
+#### **Example:**
 ```python
-cities = ["Bengaluru", "Mysuru", "Hubballi", "Mangaluru"]
-for city in cities:
-    print(city)
+age = 25
+name = "John"
+is_student = True
 ```
 
-**Output**:
-```
-Bengaluru
-Mysuru
-Hubballi
-Mangaluru
-```
+### **2. Data Types in Python**
+Python has various built-in data types. Some common ones are:
+- **int**: For integers (e.g., 1, -3, 100)
+- **float**: For floating-point numbers (e.g., 3.14, -0.001)
+- **str**: For strings (e.g., "Hello", "Python")
+- **bool**: For boolean values (True or False)
 
-- Here, `cities` is a list, and the `for` loop iterates over each item (city) in that list.
-
-### **2. Using `range()` with `for` Loops**
-
-The `range()` function generates a sequence of numbers, which you can use in a `for` loop when you want to repeat a block of code a specific number of times.
-
-#### **Syntax of `range()`**:
+#### **Type Checking:**
+You can use the `type()` function to check the type of a variable.
 ```python
-range(start, stop, step)
+x = 10
+print(type(x))  # Output: <class 'int'>
 ```
-- `start`: The starting value (inclusive).
-- `stop`: The ending value (exclusive).
-- `step`: The increment (optional, default is 1).
 
-#### **Example**: Counting from 1 to 10
+### **3. Type Conversion**
+Python allows you to convert between data types using functions like `int()`, `float()`, `str()`, etc.
+
+#### **Example:**
 ```python
-for i in range(1, 11):
-    print(i)
+x = "10"  # x is a string
+y = int(x)  # Convert string to integer
+z = float(y)  # Convert integer to float
+print(z)  # Output: 10.0
 ```
 
-This loop will print the numbers from 1 to 10.
+### **4. Arithmetic Operators**
+Python supports basic arithmetic operations like addition, subtraction, multiplication, division, and more.
 
-**Output**:
-```
-1
-2
-3
-4
-5
-6
-7
-8
-9
-10
-```
+#### **Common Operators:**
+- `+` (Addition)
+- `-` (Subtraction)
+- `*` (Multiplication)
+- `/` (Division)
+- `//` (Floor Division)
+- `%` (Modulus)
+- `**` (Exponentiation)
 
-#### **Example**: Counting by 2s from 1 to 10
+#### **Examples:**
 ```python
-for i in range(1, 11, 2):
-    print(i)
+a = 10
+b = 3
+print(a + b)  # Output: 13
+print(a - b)  # Output: 7
+print(a * b)  # Output: 30
+print(a / b)  # Output: 3.3333...
+print(a // b)  # Output: 3 (Floor Division)
+print(a % b)  # Output: 1 (Modulus)
+print(a ** b)  # Output: 1000 (Exponentiation)
 ```
 
-This loop prints only the odd numbers between 1 and 10.
+### **5. Assigning Values to Multiple Variables**
+Python allows you to assign values to multiple variables in a single line.
 
-**Output**:
-```
-1
-3
-5
-7
-9
-```
-
-### **3. Looping Over Strings**
-
-You can also loop over each character in a string using a `for` loop.
-
-#### **Example**: Printing each character in a string
+#### **Example:**
 ```python
-name = "Karnataka"
-for letter in name:
-    print(letter)
+x, y, z = 10, 20, 30
+print(x)  # Output: 10
+print(y)  # Output: 20
+print(z)  # Output: 30
 ```
 
-**Output**:
-```
-K
-a
-r
-n
-a
-t
-a
-k
-a
-```
-
-This loop goes through the string `"Karnataka"` one character at a time.
-
-### **4. Nested `for` Loops**
-
-You can also have **nested `for` loops**, which means a loop inside another loop. This is useful when working with multi-level data, like lists inside lists.
-
-#### **Example**: Multiplication Table
-
-Let’s print the multiplication table from 1 to 5 using a nested `for` loop.
-
+You can also assign the same value to multiple variables in one line:
 ```python
-for i in range(1, 6):
-    for j in range(1, 6):
-        print(f"{i} x {j} = {i * j}")
-    print()  # To print an empty line after each table
+x = y = z = 100
+print(x, y, z)  # Output: 100 100 100
 ```
 
-**Output**:
-```
-1 x 1 = 1
-1 x 2 = 2
-1 x 3 = 3
-1 x 4 = 4
-1 x 5 = 5
+### **6. Variable Reassignment**
+You can change the value of a variable at any point in your program.
 
-2 x 1 = 2
-2 x 2 = 4
-2 x 3 = 6
-2 x 4 = 8
-2 x 5 = 10
-
-...
-
-5 x 1 = 5
-5 x 2 = 10
-5 x 3 = 15
-5 x 4 = 20
-5 x 5 = 25
-```
-
-Here, the outer loop controls the first number (`i`), and the inner loop controls the second number (`j`). Together, they generate the multiplication table.
-
-### **5. Using `break` in a `for` Loop**
-
-The `break` statement is used to exit a loop early when a certain condition is met.
-
-#### **Example**: Stop the loop when you find a specific item
-Let’s say you are searching for a specific city in a list:
-
+#### **Example:**
 ```python
-cities = ["Bengaluru", "Mysuru", "Hubballi", "Mangaluru"]
-for city in cities:
-    if city == "Hubballi":
-        print(f"Found {city}!")
-        break
-    print(city)
+x = 5
+print(x)  # Output: 5
+x = 10
+print(x)  # Output: 10
 ```
-
-In this case, the loop stops when it finds `"Hubballi"` and prints `"Found Hubballi!"`.
-
-**Output**:
-```
-Bengaluru
-Mysuru
-Found Hubballi!
-```
-
-### **6. Using `continue` in a `for` Loop**
-
-The `continue` statement is used to skip the current iteration of the loop and move on to the next one.
-
-#### **Example**: Skip a specific item in a list
-Let’s skip `"Hubballi"` while looping through the cities:
-
-```python
-cities = ["Bengaluru", "Mysuru", "Hubballi", "Mangaluru"]
-for city in cities:
-    if city == "Hubballi":
-        continue
-    print(city)
-```
-
-**Output**:
-```
-Bengaluru
-Mysuru
-Mangaluru
-```
-
-Here, `"Hubballi"` is skipped, and the loop continues with the next city.
-
-### **7. Looping Through a List with `enumerate()`**
-
-The `enumerate()` function allows you to loop over a sequence and get both the index and the value of each item.
-
-#### **Example**: Displaying the index and value of each city
-```python
-cities = ["Bengaluru", "Mysuru", "Hubballi", "Mangaluru"]
-for index, city in enumerate(cities):
-    print(f"City {index + 1}: {city}")
-```
-
-**Output**:
-```
-City 1: Bengaluru
-City 2: Mysuru
-City 3: Hubballi
-City 4: Mangaluru
-```
-
-### **8. Using `else` with `for` Loops**
-
-You can also use an **`else` clause** with a `for` loop. The code inside the `else` block will execute once the loop finishes, unless the loop is terminated by a `break` statement.
-
-#### **Example**:
-```python
-for city in cities:
-    print(city)
-else:
-    print("No more cities!")
-```
-
-**Output**:
-```
-Bengaluru
-Mysuru
-Hubballi
-Mangaluru
-No more cities!
-```
-
-In this case, after the loop has finished going through all the cities, it prints `"No more cities!"`.
-
-### **9. Real-Life Example: Distributing Laddus**
-
-Imagine you have 5 laddus to distribute among friends. You can use a `for` loop to give each friend one laddu.
-
-```python
-laddus = 5
-friends = ["Rahul", "Sneha", "Aman", "Priya"]
-
-for friend in friends:
-    if laddus > 0:
-        print(f"{friend} gets a laddu!")
-        laddus -= 1
-    else:
-        print("No laddus left!")
-```
-
-**Output**:
-```
-Rahul gets a laddu!
-Sneha gets a laddu!
-Aman gets a laddu!
-Priya gets a laddu!
-No laddus left!
-```
-
-Here, the loop goes through the list of friends and distributes the laddus one by one.
 
 ---
 
 ### **Homework**
 
-1. **Multiples of 3**:
-   - Write a `for` loop that prints all multiples of 3 between 1 and 30.
+1. **Arithmetic Practice:**
+   Write a Python program that performs basic arithmetic operations (addition, subtraction, multiplication, and division) on two numbers. Define the two numbers as variables within the code and print the results for each operation.
 
-2. **Sum of First 10 Numbers**:
-   - Write a program using a `for` loop that calculates the sum of numbers from 1 to 10.
+2. **Swap Two Variables:**
+   Write a Python program that swaps the values of two variables with and without using a third variable.
 
-3. **Print Your Name Letter by Letter**:
-   - Write a program that takes your name as input and prints each letter of your name using a `for` loop.
+3. **Build in Public:**
+   Create a post on Linkedin/X and share that you learn variables and data types in python and its day 1. (Use #engineeringinkannada and mention me)
 
-4. **Count Vowels in a String**:
-   - Write a program that counts how many vowels are in a given string using a `for` loop.
+---
 
+### **YouTube Reference**
+Watch the following YouTube video from my channel:
+- [Watch the tutorial on YouTube](https://youtu.be/jr1FF9-VAJs?si=gBFha6Rq_ae3i16r)
+
+
+ Make sure to subscribe to the channel for more Python tutorial and updates! 
