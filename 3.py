@@ -1,5 +1,5 @@
-#age = input("Enter your age: ")  # Taking input from the user
-#print("Your age is:", age)  # Output: Your age is: (whatever the user entered)
+age = input("Enter your age: ")  # Taking input from the user
+print("Your age is:", age)  # Output: Your age is: (whatever the user entered)
 
 Boy_name = input("Enter Boy name: ") # Taking input for name
 Boy_age = int (input("Enter your age: ")) # Taking input for age
